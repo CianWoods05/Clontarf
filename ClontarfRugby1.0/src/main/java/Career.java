@@ -53,6 +53,7 @@ public class Career {
         Season.selectSeason(career);
         System.out.println("Do you still want to add another season? (y/n)");
         String input = scanner.nextLine();
+        scanner.close();
         if(input.equals("y")){
             Career.createLatestSeason(career);
         }else{
