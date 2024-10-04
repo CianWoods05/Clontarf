@@ -71,6 +71,7 @@ public class Match {
 
         } catch (IOException e) {
             System.out.println("ERROR: Could not read " + fileName);
+            e.printStackTrace();
         }
 
         System.out.printf(fileName);

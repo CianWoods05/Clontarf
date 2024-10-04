@@ -55,13 +55,13 @@ public class Career {
     }
     public void readSeasonFolder(){
         int i,j = 0;
-        File folderName = new File("/workspaces/Clontarf/ClontarfRugby1.0/src/main/java/career/23_24/");
+        File folderName = new File("ClontarfRugby1.0/src/main/java/career/23_24/");
         String positions[] = folderName.list();
         String fileName, pathName;
         for(j = 0; j <= positions.length - 1; j++){
             for(i = 1; i <= 20; i++){
                 fileName = "game" + String.valueOf(i);
-                pathName = "/workspaces/Clontarf/ClontarfRugby1.0/src/main/java/career/23_24/" + positions[j] + "/" + fileName + ".csv";
+                pathName = "ClontarfRugby1.0/src/main/java/career/23_24/" + positions[j] + "/" + fileName + ".csv";
                 if(Files.exists(Paths.get(pathName))){
                     Match.readGameFile(fileName,positions[j], this);
                 }
