@@ -9,7 +9,7 @@ public class Career {
     public Career(){
 
     }
-    public Career(ArrayList s){
+    public Career(ArrayList<Season> s){
         seasonList = s;
     }
     public ArrayList<Season> getSeasonList(){
@@ -46,6 +46,7 @@ public class Career {
         Season.selectSeason(career);
         System.out.println("Do you still want to add another season? (y/n)");
         String input = scanner.nextLine();
+        scanner.close();
         if(input.equals("y")){
             Career.createLatestSeason(career);
         }else{
@@ -54,13 +55,13 @@ public class Career {
     }
     public void readSeasonFolder(){
         int i,j = 0;
-        File folderName = new File("src/main/java/career/23_24");
+        File folderName = new File("/workspaces/Clontarf/ClontarfRugby1.0/src/main/java/career/23_24");
         String positions[] = folderName.list();
         String fileName, pathName;
         for(j = 0; j <= positions.length - 1; j++){
             for(i = 1; i <= 20; i++){
                 fileName = "game" + String.valueOf(i);
-                pathName = "src/main/java/career/23_24/" + positions[j] + "/" + fileName + ".csv";
+                pathName = "/workspaces/Clontarf/ClontarfRugby1.0/src/main/java/career/23_24" + positions[j] + "/" + fileName + ".csv";
                 if(Files.exists(Paths.get(pathName))){
                     Match.readGameFile(fileName,positions[j], this);
                 }
@@ -75,6 +76,7 @@ public class Career {
         System.out.println("(2) View Leaderboard for all PlayerStats");
         System.out.println("(3) View Player Position in all Leaderboards");
         int input = Integer.parseInt(scanner.nextLine());
+        scanner.close();
         switch (input){
             case 1:
                 viewLeaderboardForIndividualStat();
@@ -94,6 +96,7 @@ public class Career {
         Scanner scanner = new Scanner(System.in);
         displayStatNameList();
         int input = Integer.parseInt(scanner.nextLine()) - 1;
+        scanner.close();
         String statName = getElementOfStatNameList(input);
         Season season = this.getCurrentSeason();
         ArrayList<String> playerNameList = Season.getNameList(season);

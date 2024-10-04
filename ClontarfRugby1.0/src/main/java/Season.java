@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Season {
     ArrayList<Match> matchList = new ArrayList<>();
     public String seasonName;
-    public Season(ArrayList mL, String sN){
+    public Season(ArrayList<Match> mL, String sN){
         seasonName = sN;
         matchList = mL;
     }
@@ -43,6 +43,7 @@ public class Season {
             i += 1;
         }
         int seasonNum = Integer.parseInt(scanner.nextLine());
+        scanner.close();
         return career.getSeasonList().get(seasonNum - 1);
     }
     public static void playerStatsAcrossSeason(Career career){
@@ -70,7 +71,7 @@ public class Season {
             i += 1;
         }
         int input = Integer.parseInt(scanner.nextLine());
-
+        scanner.close();
         return playerNameList.get(input - 1);
 
     }

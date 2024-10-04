@@ -11,7 +11,7 @@ public class Match {
     public String refereeName;
     public String fileName;
 
-    public Match(String fN,int hS, int aS, boolean wH, String rN, ArrayList pL){
+    public Match(String fN,int hS, int aS, boolean wH, String rN, ArrayList<Player> pL){
         fileName = fN;
         homeScore = hS;
         awayScore = aS;
@@ -65,7 +65,8 @@ public class Match {
                 statRow = new Integer[numPlayers];
 
             }
-
+            
+            br.close();
             addStatsToMatch(career, fileName,position, statArray, nameList);
 
         } catch (IOException e) {
@@ -81,7 +82,7 @@ public class Match {
     }
     public static void addStatsToMatch(Career career, String fileName,String position, ArrayList<Integer[]> statArray, String[] nameList){
 
-        int i,j,k = 0;
+        int i,j = 0;
         Integer[] statColumn;
         ArrayList<Integer[]> playerStats = new ArrayList<>();
         ArrayList<Player> playerList = new ArrayList<>();
@@ -115,7 +116,6 @@ public class Match {
     }
 
     public static void outputMatch100Scores(Career career){
-        Scanner scanner = new Scanner(System.in);
         Match currentMatch = selectMatch(career);
 
         System.out.println(currentMatch.getFileName());
@@ -135,6 +135,7 @@ public class Match {
             i += 1;
         }
         int matchNum = Integer.parseInt(scanner.nextLine());
+        scanner.close();
         return currentSeason.getMatchList().get(matchNum - 1);
     }
 

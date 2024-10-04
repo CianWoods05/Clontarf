@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public enum PlayerStats {
     GAINLINEPOSITIVE(0.5), GAINLINEZERO(-0.1), UNSUCCESSFULCARRY(-3)
     ,TOTALMETERSMADE(0.2), DEFENDERSBEATEN(3), LINEBREAKMADE(2.5),

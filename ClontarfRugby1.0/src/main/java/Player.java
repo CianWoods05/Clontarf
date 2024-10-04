@@ -115,7 +115,7 @@ public class Player {
         }
         int input = Integer.parseInt(scanner.nextLine());
         Player selectedPlayer = currentMatch.getPlayerList().get(input - 1);
-
+        scanner.close();
         return selectedPlayer;
 
     }

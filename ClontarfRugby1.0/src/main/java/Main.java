@@ -10,6 +10,7 @@ public class Main {
         System.out.println("(4) View Player 100 Scores from across Season");
         System.out.println("(5) Back to Menu");
         int option = Integer.parseInt(scanner.nextLine());
+        scanner.close();
         switch(option){
             case 1:
                 Player.viewPlayerStatsFromMatch(career);
@@ -46,7 +47,7 @@ public class Main {
         System.out.println("(1) View Team Overview");
         System.out.println("(2) View Team Leaderboards");
         int option = Integer.parseInt(scanner.nextLine());
-
+        scanner.close();
         switch (option){
             case 1:
                 System.out.println("Team Mean 100 Score Across Season: " + Season.calculateTeamMean100Score(career));
@@ -85,7 +86,7 @@ public class Main {
             System.out.println("(4) View/Add Seasons");
             System.out.println("(5) Exit");
             int input = Integer.parseInt(scanner.nextLine());
-
+            scanner.close();
             switch(input){
                 case 1:
                     viewPlayerStats(career);
