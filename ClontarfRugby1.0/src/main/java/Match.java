@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Match {
     ArrayList<Player> playerList = new ArrayList<>();
     public boolean wasHome;

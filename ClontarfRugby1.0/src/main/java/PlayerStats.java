@@ -18,10 +18,7 @@ public enum PlayerStats {
     public double getValue() {
         return value;
     }
-
     public String getName(){
         return this.name();
     }
-
-
 }

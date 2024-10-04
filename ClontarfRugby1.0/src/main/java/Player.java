@@ -1,7 +1,5 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class Player {
     public String name;
     public double hundredScore;
@@ -24,7 +22,6 @@ public class Player {
 
     public static Integer[] getStatTotals(Season season,String playerName){
         Integer[] currentPlayerStatTotals = new Integer[30];
-
         int i = 0;
 
         for(i = 0; i < 30; i++){
@@ -35,8 +32,7 @@ public class Player {
             for(Player player: match.getPlayerList()){
 
                 if(playerName.equals(player.getName())){
-                    Integer[] playerStats = new Integer[30];
-                    playerStats = player.getPlayerStats();
+                    Integer[] playerStats = player.getPlayerStats();
 
                     for(i = 0; i < 30; i ++){
                         currentPlayerStatTotals[i] += playerStats[i];
@@ -44,9 +40,6 @@ public class Player {
                 }
             }
         }
-
-
-
         return currentPlayerStatTotals;
     }
 
@@ -74,7 +67,6 @@ public class Player {
         }
 
 
-        System.out.println(numGamesPlayed + " games played");
         return currentPlayerStatAvg;
     }
 

@@ -1,11 +1,6 @@
-
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class Season {
     ArrayList<Match> matchList = new ArrayList<>();
     public String seasonName;
@@ -39,7 +34,6 @@ public class Season {
 
         return playerNameList;
     }
-
     public static Season selectSeason(Career career){
         Scanner scanner = new Scanner(System.in);
         int i = 1;
@@ -51,7 +45,6 @@ public class Season {
         int seasonNum = Integer.parseInt(scanner.nextLine());
         return career.getSeasonList().get(seasonNum - 1);
     }
-
     public static void playerStatsAcrossSeason(Career career){
         Season currentSeason = selectSeason(career);
         ArrayList<String> playerNameList = getNameList(currentSeason);
@@ -68,7 +61,6 @@ public class Season {
 
         Main.menu(career);
     }
-
     public static String selectNameFromNameList(ArrayList<String> playerNameList){
         Scanner scanner = new Scanner(System.in);
         int i = 1;
@@ -82,7 +74,6 @@ public class Season {
         return playerNameList.get(input - 1);
 
     }
-
     public static void player100ScoreAcrossSeason(Career career){
         ArrayList<String> playerNameList = getNameList(career.getCurrentSeason());
         String currentPlayerName = selectNameFromNameList(playerNameList);
@@ -112,7 +103,6 @@ public class Season {
 
         Main.menu(career);
     }
-
     public static Double calculateTeamMean100Score(Career career){
         int gamesPlayed = 0;
         double total100Score = 0.0, avg100Score = 0.0;
@@ -131,7 +121,6 @@ public class Season {
 
         return avg100Score;
     }
-
     public static void calculateTeamStatTotals(Career career){
         Integer[] teamStatTotals = new Integer[30];
         Double[] teamStatAvg = new Double[30];

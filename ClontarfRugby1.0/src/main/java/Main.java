@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
@@ -29,7 +28,6 @@ public class Main {
 
         menu(career);
     }
-
     public static void viewMatchStats(Career career){
         Match match = Match.selectMatch(career);
         System.out.println(match.getFileName());
@@ -44,15 +42,27 @@ public class Main {
     }
 
     public static void viewTeamStats(Career career){
-        System.out.println("Team Mean 100 Score Across Season: " + Season.calculateTeamMean100Score(career));
-        Season.calculateTeamStatTotals(career);
-        menu(career);
-    }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("(1) View Team Overview");
+        System.out.println("(2) View Team Leaderboards");
+        int option = Integer.parseInt(scanner.nextLine());
 
-    public static void viewLeaderboards(Career career){
-        
-    }
+        switch (option){
+            case 1:
+                System.out.println("Team Mean 100 Score Across Season: " + Season.calculateTeamMean100Score(career));
+                Season.calculateTeamStatTotals(career);
+                menu(career);
+            case 2:
+                career.viewTeamLeaderboards();
+                menu(career);
+            break;
+            default:
+                menu(career);
+        }
 
+
+
+    }
     public static void main(String[] args) {
         //initialises empty 23/24 season
         Career career = new Career().initialiseCareer();
@@ -84,10 +94,8 @@ public class Main {
                 case 3:
                     viewMatchStats(career);
                 case 4:
-                    viewLeaderboards(career);
-                case 5:
                     Career.addSeason(career);
-                case 6:
+                case 5:
                     System.exit(0);
                     break;
                 default:
