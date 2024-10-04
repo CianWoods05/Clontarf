@@ -41,7 +41,7 @@ public class Match {
     public static void readGameFile(String fileName,String position, Career career) {
         int i;
         ArrayList<Integer[]> statArray = new ArrayList<>();
-        String pathName = "src/main/java/career/23_24/" + position + "/" + fileName + ".csv";
+        String pathName = "ClontarfRugby1.0/src/main/java/career/23_24/" + position + "/" + fileName + ".csv";
         String testRow;
         String[] nameList;
 
