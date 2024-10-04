@@ -68,16 +68,15 @@ public class Match {
             
             br.close();
             addStatsToMatch(career, fileName,position, statArray, nameList);
-
+            System.out.printf(fileName);
+            System.out.printf(" has been added to season ");
+            System.out.printf(career.getCurrentSeason().getSeasonName());
+            System.out.println();
         } catch (IOException e) {
             System.out.println("ERROR: Could not read " + fileName);
-            e.printStackTrace();
         }
 
-        System.out.printf(fileName);
-        System.out.printf(" has been added to season ");
-        System.out.printf(career.getCurrentSeason().getSeasonName());
-        System.out.println();
+        
 
 
     }
