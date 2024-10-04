@@ -86,7 +86,6 @@ public class Main {
             System.out.println("(4) View/Add Seasons");
             System.out.println("(5) Exit");
             int input = Integer.parseInt(scanner.nextLine());
-            scanner.close();
             switch(input){
                 case 1:
                     viewPlayerStats(career);
