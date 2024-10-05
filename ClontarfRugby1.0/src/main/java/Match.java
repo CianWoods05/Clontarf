@@ -135,7 +135,6 @@ public class Match {
             i += 1;
         }
         int matchNum = Integer.parseInt(scanner.nextLine());
-        scanner.close();
         return currentSeason.getMatchList().get(matchNum - 1);
     }
 

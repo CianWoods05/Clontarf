@@ -46,7 +46,6 @@ public class Career {
         Season.selectSeason(career);
         System.out.println("Do you still want to add another season? (y/n)");
         String input = scanner.nextLine();
-        scanner.close();
         if(input.equals("y")){
             Career.createLatestSeason(career);
         }else{
@@ -76,7 +75,6 @@ public class Career {
         System.out.println("(2) View Leaderboard for all PlayerStats");
         System.out.println("(3) View Player Position in all Leaderboards");
         int input = Integer.parseInt(scanner.nextLine());
-        scanner.close();
         switch (input){
             case 1:
                 viewLeaderboardForIndividualStat();
@@ -96,7 +94,6 @@ public class Career {
         Scanner scanner = new Scanner(System.in);
         displayStatNameList();
         int input = Integer.parseInt(scanner.nextLine()) - 1;
-        scanner.close();
         String statName = getElementOfStatNameList(input);
         Season season = this.getCurrentSeason();
         ArrayList<String> playerNameList = Season.getNameList(season);
